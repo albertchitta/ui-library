@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from "react";
+import { colorVariant, conditionStyle, flexCenter, localVarStyle } from "./App.css";
+import { light, dark } from "./vars.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={light}>
+      <div className={localVarStyle}>
+        Hello World
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <StyledComponent color="secondary"/>
+      <div className={conditionStyle}>
+        Test
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
+  )
+}
+
+interface StyledComponentProps {
+  color: keyof typeof colorVariant;
+}
+
+function StyledComponent (props: StyledComponentProps) {
+  return (
+    <div className={colorVariant[props.color]}>
+      style
+    </div>
   )
 }
 
