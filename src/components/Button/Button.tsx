@@ -1,9 +1,11 @@
 import * as React from "react";
-import { baseButton, buttonVariants } from "./Button.css";
+import { baseButton, buttonColorVariants, buttonSizeVariants } from "./Button.css";
+import { Text } from "../index";
 
 interface ButtonProps {
   text: string;
-  variant: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   disabled: boolean;
   onClick?: () => void;
 }
@@ -11,6 +13,7 @@ interface ButtonProps {
 const Button = ({
   text = "Button",
   variant = "primary",
+  size = "md",
   disabled = false,
   ...props
 }: ButtonProps) => {
@@ -18,10 +21,16 @@ const Button = ({
     <button
       type="button"
       disabled={disabled}
-      className={`${baseButton} ${buttonVariants[variant]}`}
+      className={`
+        ${baseButton}
+        ${buttonColorVariants[variant]}
+        ${buttonSizeVariants[size]}
+      `}
       {...props}
     >
-      {text}
+      <Text>
+        {text}
+      </Text>
     </button>
   )
 }

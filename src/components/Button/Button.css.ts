@@ -1,4 +1,6 @@
 import { style, styleVariants } from "@vanilla-extract/css";
+import { colors } from "../../styles/colors.css";
+import { typography } from "../../styles/typography.css";
 
 export const baseButton = style({
   display: "flex",
@@ -7,25 +9,28 @@ export const baseButton = style({
   alignItems: "center",
   borderRadius: "6px",
   cursor: "pointer",
+  color: colors.gray8,
+  // fontFamily: typography.action.fontFamily,
+  fontStyle: typography.action.fontStyle,
+  fontWeight: typography.action.fontWeight,
 });
 
-export const buttonVariants = styleVariants({
+export const buttonColorVariants = styleVariants({
   primary: {
-    border: "1px solid #35CEDE",
-    background: "#35CEDE",
-    color: "#1E1F20",
+    border: `px solid ${colors.action1}`,
+    background: colors.action1,
     ":hover": {
-      background: "#D8DADA",
-      borderColor: "#D8DADA"
+      background: colors.gray2,
+      borderColor: colors.gray2,
     },
     ":active": {
-      background: "#C0C3C4",
-      borderColor: "#C0C3C4",
+      background: colors.gray3,
+      borderColor: colors.gray3,
     },
     ":disabled": {
-      background: "#00373D",
-      borderColor: "#00373D",
-      color: "#919697",
+      background: colors.action2,
+      borderColor: colors.action2,
+      color: colors.gray4,
     },
   },
   secondary: {
@@ -57,4 +62,32 @@ export const buttonVariants = styleVariants({
       color: "#919697",
     }
   },
+});
+
+export const buttonSizeVariants = styleVariants({
+  xs: {
+    padding: "9px",
+    fontSize: "12px",
+    lineHeight: "15px",
+  },
+  sm: {
+    padding: "12px",
+    fontSize: "15px",
+    lineHeight: "18px",
+  },
+  md: {
+    padding: "15px",
+    fontSize: "18px",
+    lineHeight: "21px",
+  },
+  lg: {
+    padding: "18px",
+    fontSize: "21px",
+    lineHeight: "24px",
+  },
+  xl: {
+    padding: "21px",
+    fontSize: "24px",
+    lineHeight: "27px",
+  }
 });
