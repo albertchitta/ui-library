@@ -10,14 +10,13 @@ export const baseButton = style({
   borderRadius: "6px",
   cursor: "pointer",
   color: colors.gray8,
-  // fontFamily: typography.action.fontFamily,
   fontStyle: typography.action.fontStyle,
   fontWeight: typography.action.fontWeight,
 });
 
 export const buttonColorVariants = styleVariants({
   primary: {
-    border: `px solid ${colors.action1}`,
+    border: `1px solid ${colors.action1}`,
     background: colors.action1,
     ":hover": {
       background: colors.gray2,
@@ -34,32 +33,32 @@ export const buttonColorVariants = styleVariants({
     },
   },
   secondary: {
-    border: "1px solid #00373D",
-    background: "#00373D",
-    color: "#35CEDE",
+    border: `1px solid ${colors.action2}`,
+    background: colors.action2,
+    color: colors.action1,
     ":hover": {
-      border: "1px solid #35CEDE",
+      border: `1px solid ${colors.action1}`,
     },
     ":active": {
-      color: "#9BA4AB",
+      color: colors.gray4,
     },
     ":disabled": {
-      background: "#3B3F3F",
-      borderColor: "#3B3F3F",
-      color: "#919697",
+      background: colors.gray5,
+      borderColor: colors.gray5,
+      color: colors.gray4,
     }
   },
   tertiary: {
     background: "none",
     border: "none",
     ":hover": {
-      color: "#35CEDE",
+      color: colors.action1,
     },
     ":active": {
-      color: "#35CEDE",
+      color: colors.action1,
     },
     ":disabled": {
-      color: "#919697",
+      color: colors.gray4,
     }
   },
 });
@@ -67,27 +66,27 @@ export const buttonColorVariants = styleVariants({
 export const buttonSizeVariants = styleVariants({
   xs: {
     padding: "9px",
-    fontSize: "12px",
-    lineHeight: "15px",
+    fontSize: typography.action.fontSize.xs,
+    lineHeight: typography.action.lineHeight.xs,
   },
   sm: {
     padding: "12px",
-    fontSize: "15px",
-    lineHeight: "18px",
+    fontSize: typography.action.fontSize.sm,
+    lineHeight: typography.action.lineHeight.sm,
   },
   md: {
     padding: "15px",
-    fontSize: "18px",
-    lineHeight: "21px",
+    fontSize: typography.action.fontSize.md,
+    lineHeight: typography.action.lineHeight.md,
   },
   lg: {
     padding: "18px",
-    fontSize: "21px",
-    lineHeight: "24px",
+    fontSize: typography.action.fontSize.lg,
+    lineHeight: typography.action.lineHeight.lg,
   },
   xl: {
     padding: "21px",
-    fontSize: "24px",
-    lineHeight: "27px",
+    fontSize: typography.action.fontSize.xl,
+    lineHeight: typography.action.lineHeight.xl,
   }
 });
